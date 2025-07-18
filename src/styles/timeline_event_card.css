@@ -1,28 +1,70 @@
 .timeline-section {
-    padding: 1rem 0;
+    padding: 2rem 1rem;
+    background-color: #f0f4f8;
 }
 
 .timeline-scroll {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     overflow-x: auto;
     padding: 1rem 0;
     scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+}
+
+/* Scrollbar para WebKit (Chrome, Safari) */
+.timeline-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.timeline-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.timeline-scroll::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
 }
 
 .timeline-event {
     flex: 0 0 auto;
-    width: 250px;
-    border: 1px solid #ddd;
-    padding: 1rem;
-    border-radius: 8px;
-    background: #f9f9f9;
+    width: 260px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
     scroll-snap-align: start;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-event:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .timeline-event img {
     width: 100%;
-    height: auto;
-    border-radius: 4px;
+    height: 160px;
     object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.timeline-event-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.timeline-event-content h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.timeline-event-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
 }
