@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import "./home.css";
+import "../styles/home.css";
 
 function Home() {
     const [expandedIndex, setExpandedIndex] = useState<number | null>(null);

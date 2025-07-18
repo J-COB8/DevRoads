@@ -1,0 +1,28 @@
+.timeline-section {
+    padding: 1rem 0;
+}
+
+.timeline-scroll {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
+}
+
+.timeline-event {
+    flex: 0 0 auto;
+    width: 250px;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    background: #f9f9f9;
+    scroll-snap-align: start;
+}
+
+.timeline-event img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+}

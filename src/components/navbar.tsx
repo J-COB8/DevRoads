@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import './Navbar.css';
+import '../styles/navbar.css';
 
 function Navbar() {
     const { t } = useTranslation('navbar');
