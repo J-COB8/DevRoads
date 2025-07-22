@@ -1,4 +1,5 @@
 // src/pages/OverviewComputing.tsx
+
 import { useTranslation } from 'react-i18next';
 import Timeline from "../components/panorama/timeline";
 import Impact from "../components/panorama/humanimpact";
@@ -16,13 +17,18 @@ function OverviewComputing() {
                 <p className="overview-description">{t('description')}</p>.
             </div>
 
+            {/* <Timeline />
+            <Figures />
+            <Impact />
+            <Present /> */}
+
             <section className="panorama-section">
-                {/* <h1>Panorama de la Computación</h1> */}
                 <Timeline />
                 <Figures />
                 <Impact />
                 <Present />
             </section>
+
         </div>
 
     );

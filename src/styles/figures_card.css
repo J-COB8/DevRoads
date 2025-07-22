@@ -1,0 +1,53 @@
+.timeline-event {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.timeline-event:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.timeline-event h3 {
+    font-size: 1.1rem;
+    color: #888;
+    margin: 0.25rem 0;
+}
+
+.timeline-event h4 {
+    font-size: 1.3rem;
+    color: #333;
+    margin: 0.5rem 0;
+    font-weight: 600;
+}
+
+.timeline-event p {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.5rem 0;
+    line-height: 1.4;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .timeline-event {
+        max-width: 90%;
+        margin: 1rem auto;
+    }
+}
