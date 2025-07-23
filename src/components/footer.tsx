@@ -31,8 +31,8 @@ function Footer() {
 
             {/* Enlaces a redes */}
             <div style={{ marginTop: '10px' }}>
-                <a href="https://github.com/tunombre" target="_blank" rel="noopener noreferrer">GitHub</a> |{" "}
-                <a href="https://linkedin.com/in/tunombre" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/J-COB8/DevRoads" target="_blank" rel="noopener noreferrer">GitHub</a> |{" "}
+                <a href="https://linkedin.com/in/joaquin-alvarez-mercado" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
         </footer>
     );

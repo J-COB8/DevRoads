@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import '../styles/navbar.css';
+import clsx from 'clsx';
+import styles from '../styles/navbar.module.css';
 
 function Navbar() {
     const { t } = useTranslation('navbar');
@@ -12,37 +13,44 @@ function Navbar() {
 
     return (
         <>
-            <header className="navbar">
-                <div className="navbar__logo">
+            <header className={styles.navbar}>
+                <div className={styles["navbar__logo"]}>
                     <Link
                         to="/"
                         onClick={closeMenu}
                         className="flex items-center text-black no-underline hover:opacity-80"
                         style={{ textDecoration: 'none', color: 'inherit' }}
                     >
-                        <img src="/logo.png" alt="DevRoads logo" style={{
-                            height: '30px',
-                            verticalAlign: 'middle',
-                            marginRight: '8px'
-                        }}
+                        <img
+                            src="/logo.png"
+                            alt="DevRoads logo"
+                            style={{
+                                height: '30px',
+                                verticalAlign: 'middle',
+                                marginRight: '8px'
+                            }}
                         />
                         {t('DevRoads')}
                     </Link>
                 </div>
 
-                <nav className={`navbar__links ${menuOpen ? 'open' : ''}`}>
-                    {/* Eliminamos el link duplicado de Home */}
+                <nav className={clsx(
+                    styles["navbar__links"],
+                    menuOpen && styles.open
+                )}>
                     <Link to="/overviewComputing" onClick={closeMenu}>{t('overviewComputing')}</Link>
                     <Link to="/about" onClick={closeMenu}>{t('about')}</Link>
                     <Link to="/contribute" onClick={closeMenu}>{t('contribute')}</Link>
                 </nav>
 
-                <div className="navbar__toggle" onClick={toggleMenu}>
+                <div className={styles["navbar__toggle"]} onClick={toggleMenu}>
                     ☰
                 </div>
             </header>
 
-            {menuOpen && <div className="navbar__overlay" onClick={closeMenu} />}
+            {menuOpen && (
+                <div className={styles["navbar__overlay"]} onClick={closeMenu} />
+            )}
         </>
     );
 }

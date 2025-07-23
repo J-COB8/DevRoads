@@ -1,0 +1,46 @@
+.timeline-event {
+    flex: 0 0 auto;
+    width: 280px;
+    border-radius: 16px;
+    background: linear-gradient(145deg, #ffffff, #f4f4f4);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: start;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-event:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.timeline-event h3 {
+    margin: 0.5rem 1rem 0 1rem;
+    font-size: 1rem;
+    color: #555;
+    font-weight: 600;
+}
+
+.timeline-event h4 {
+    margin: 0.2rem 1rem 0 1rem;
+    font-size: 1.25rem;
+    color: #222;
+    font-weight: bold;
+}
+
+.timeline-event p {
+    margin: 0.5rem 1rem 1rem 1rem;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+}

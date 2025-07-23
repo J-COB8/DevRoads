@@ -1,5 +1,5 @@
 import { FiguresInfo as FiguresDatas } from "../../models/figures_info";
-// import "../../styles/figures_card.css";
+import styles from "../../styles/figures_card.module.css"
 
 interface Props {
     event: FiguresDatas;
@@ -7,7 +7,7 @@ interface Props {
 
 export default function FiguresCard({ event }: Props) {
     return (
-        <div className="timeline-event">
+        <div className={styles["timeline-event"]}>
             <img src={event.image} alt={event.name} className="timeline-image" />
             <h3>{event.born}</h3>
             <h4>{event.name}</h4>

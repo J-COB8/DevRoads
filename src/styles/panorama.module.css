@@ -1,0 +1,41 @@
+.timeline-section {
+    padding: 2rem;
+    background-color: #f9fafb;
+    overflow-x: hidden;
+}
+
+.timeline-section h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.timeline-scroll {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: #9ca3af #e5e7eb;
+}
+
+.timeline-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.timeline-scroll::-webkit-scrollbar-track {
+    background: #e5e7eb;
+}
+
+.timeline-scroll::-webkit-scrollbar-thumb {
+    background-color: #9ca3af;
+    border-radius: 4px;
+}
+
+.timeline-scroll>* {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+}

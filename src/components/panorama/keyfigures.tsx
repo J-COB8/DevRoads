@@ -1,5 +1,4 @@
 import { figuresInfo } from "../../data/figures_data";
-// import "../../styles/panorama.css";
 import FiguresCard from "./figures_card";
 
 interface TimelineProps {
@@ -7,7 +6,7 @@ interface TimelineProps {
     title?: string;
 }
 
-export default function keyfigures({ data = figuresInfo, title = "Línea del tiempo" }: TimelineProps) {
+export default function keyfigures({ data = figuresInfo, title = "Figuras importantes" }: TimelineProps) {
 
     return (
         <section className="timeline-section">

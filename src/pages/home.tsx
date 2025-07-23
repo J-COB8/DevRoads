@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import "../styles/home.css";
+import styles from "../styles/home.module.css";
 
 function Home() {
     const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
@@ -36,61 +36,61 @@ function Home() {
     ];
 
     return (
-        <main className="min-h-screen bg-white text-black">
-            <section className="max-content">
+        <main className={styles["main"]}>
+            <section className={styles["max-content"]}>
 
                 {/* Título e Introducción */}
-                <header className="text-center section-block">
-                    <h1 className="text-3xl md:text-6xl font-semibold mb-4">
+                <header className={styles["section-block"] + ' ' + styles["text-center"]}>
+                    <h1 className={styles["welcome-title"]}>
                         {t('welcome')}
                     </h1>
-                    <p className="text-lg md:text-xl text-gray-700 text-block">{t('introduction')}</p>
+                    <p className={styles["introduction"]}>{t('introduction')}</p>
                 </header>
 
                 {/* Sección de Visión */}
-                <section className="section-block">
-                    <h2 className="text-2xl font-medium mb-6 text-center">{t('vision')}</h2>
+                <section className={styles["section-block"]}>
+                    <h2 className={styles["vision-title"]}>{t('vision')}</h2>
 
-                    <div className="vision-card bg-white border border-gray-200 rounded-2xl shadow-md p-8 space-y-6">
+                    <div className={styles["vision-card"]}>
                         {[
                             { key: 'goal', title: t('goal'), text: t('goal-text') },
                             { key: 'tool', title: t('tool'), text: t('tool-text') },
                             { key: 'function', title: t('function'), text: t('function-text') }
                         ].map((item) => (
                             <div key={item.key}>
-                                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                                <p className="text-gray-700 text-sm leading-relaxed">{item.text}</p>
+                                <h3 className={styles["vision-subtitle"]}>{item.title}</h3>
+                                <p className={styles["vision-text"]}>{item.text}</p>
                             </div>
                         ))}
                     </div>
 
-                    <p className="text-block small-paragraph font-semibold mt-6 text-center">
+                    <p className={styles["vision-extra-text"]}>
                         {t('vision-extra-text')}
                     </p>
                 </section>
 
                 {/* Desarrollo */}
-                <section className="section-block text-block">
-                    <h2 className="diagram-title font-medium mb-3">{t('development')}</h2>
+                <section className={`${styles["section-block"]} ${styles["text-block"]}`}>
+                    <h2 className={styles["diagram-title"]}>{t('development')}</h2>
                     <p>{t('development-text')}</p>
                 </section>
 
                 {/* Etapas del Proyecto */}
-                <section className="section-block">
-                    <h2 className="text-2xl text-center">{t('stages')}</h2>
-                    <div className="stages-list max-w-xl mx-auto">
+                <section className={styles["section-block"]}>
+                    <h2 className={styles["stages-title"]}>{t('stages')}</h2>
+                    <div className={styles["stages-list"]}>
                         {stagesData.map((stage, index) => (
                             <div
                                 key={index}
-                                className={`stage-card ${expandedIndex === index ? 'expanded' : ''}`}
+                                className={`${styles["stage-card"]} ${expandedIndex === index ? styles["expanded"] : ""}`}
                                 onClick={() => setExpandedIndex(index === expandedIndex ? null : index)}
                             >
-                                <div className="stage-header">
+                                <div className={styles["stage-header"]}>
                                     <span>{stage.title}</span>
                                     <span>{expandedIndex === index ? '−' : '+'}</span>
                                 </div>
                                 {expandedIndex === index && stage.subItems.length > 0 && (
-                                    <ul className="subitems-list">
+                                    <ul className={styles["subitems-list"]}>
                                         {stage.subItems.map((item, subIdx) => (
                                             <li key={subIdx}>{item}</li>
                                         ))}
@@ -102,8 +102,8 @@ function Home() {
                 </section>
 
                 {/* Sobre mí */}
-                <section className="section-block text-block">
-                    <h2 className="text-2xl font-medium mb-3">{t('Me')}</h2>
+                <section className={`${styles["section-block"]} ${styles["text-block"]}`}>
+                    <h2 className={styles["me-title"]}>{t('Me')}</h2>
                     <p>{t('Me-text')}</p>
                 </section>
             </section>
