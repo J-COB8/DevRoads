@@ -2,8 +2,11 @@ import { TimelineEvent as TimelineEventType } from "../../../models/timeline_eve
 import styles from "../../../styles/timeline_event_card.module.css";
 
 interface Props {
-    event: TimelineEventType;
-    onClick?: () => void; // 👈 nuevo
+    event: TimelineEventType & {
+        title: string;
+        description: string;
+    };
+    onClick?: () => void;
 }
 
 export default function TimelineEventCard({ event, onClick }: Props) {

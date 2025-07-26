@@ -2,7 +2,7 @@
 export interface TimelineEvent {
   id: string;
   year: number;
-  title: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
   image: string;
 }

@@ -1,0 +1,16 @@
+{
+    "timeline": {
+        "eniac": {
+            "title": "ENIAC",
+            "description": "First electronic computer of general purpose"
+        },
+        "apple1": {
+            "title": "Apple I",
+            "description": "Apple launches its first personal computer"
+        },
+        "iphone": {
+            "title": "iPhone",
+            "description": "Apple presents the iphone and redefine movile computation"
+        }
+    }
+}
