@@ -1,14 +1,18 @@
 // src/pages/OverviewComputing.tsx
 
 import { useTranslation } from 'react-i18next';
-import Timeline from "../components/panorama/timeline";
+import Timeline from "../components/panorama/timeline/timeline";
 import Impact from "../components/panorama/humanimpact";
 import Figures from "../components/panorama/keyfigures";
 import Present from "../components/panorama/present";
 import styles from "../styles/OverviewComputing.module.css";
+import { useNavigate } from 'react-router-dom';
+import { TimelineEvent } from '../models/timeline_event';
+// dentro del componente:
 
 function OverviewComputing() {
     const { t } = useTranslation('overviewComputing');
+    const navigate = useNavigate();
 
     return (
         <div>
@@ -18,7 +22,17 @@ function OverviewComputing() {
             </div>
 
             <section className={styles["panorama-section"]}>
-                <Timeline />
+                <Timeline selectedEvent={null} onSelectEvent={function (event: TimelineEvent | null): void {
+                    throw new Error('Function not implemented.');
+                }} />
+                <div>
+                    <button
+                        onClick={() => navigate("/timeline-full")}
+                        className={styles["expand-button"]}
+                    >
+                        {t('expandTimeline')}
+                    </button>
+                </div>
                 <Figures />
                 <Impact />
                 <Present />

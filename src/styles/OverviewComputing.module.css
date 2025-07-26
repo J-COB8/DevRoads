@@ -1,37 +1,63 @@
-/* src/pages/OverviewComputing.css */
-.overview-container {
-    padding: 1rem;
-    background-color: #f9f9f9;
-}
-
-.overview-container2 {
-    padding: 0.5rem;
-    background-color: #e92222;
-}
-
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 200px;
-    border: 1px solid black;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-    /* ⬅️ Espacio entre cada bloque */
+    height: auto;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background-color: #f0f4f8;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     box-sizing: border-box;
-    /* ⬅️ Corrige esto, el tuyo tiene error */
 }
 
-/* styles/panorama.css */
+.overview-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color: #1a1a1a;
+}
+
+.overview-description {
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 800px;
+    color: #555;
+}
+
+/* Botón para ir a vista expandida */
+.expand-button {
+    display: block;
+    margin: 1.5rem auto;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #0077ff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    z-index: 1;
+    /* asegúrate de que esté sobre otras capas */
+}
+
+.expand-button:hover {
+    background-color: #005dd1;
+}
+
 .panorama-section {
-    padding: 2rem;
+    padding: 3rem 1rem;
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 3rem;
     max-width: 1200px;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .panorama-section h1 {
     text-align: center;
+    font-size: 1.8rem;
 }

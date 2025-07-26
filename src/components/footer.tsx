@@ -1,37 +1,37 @@
 import { useTranslation } from 'react-i18next';
-
+import styles from '../styles/footer.module.css';
 
 function Footer() {
     const { t, i18n } = useTranslation('footer');
 
     return (
-        <footer style={{ padding: '20px', backgroundColor: '#eee', marginTop: '30px', textAlign: 'center' }}>
-            <div style={{ marginBottom: '10px' }}>
-                <div style={{ marginBottom: '10px' }}>
-                    <button
-                        onClick={() => i18n.changeLanguage('es')}
-                        aria-label="Cambiar idioma a español"
-                        style={{ marginRight: '8px' }}
-                    >
-                        ES
-                    </button>
-                    <button
-                        onClick={() => i18n.changeLanguage('en')}
-                        aria-label="Switch language to English"
-                    >
-                        EN
-                    </button>
-                </div>
+        <footer className={styles.footerContainer}>
+            {/* Selector de idioma */}
+            <div className={styles.languageSelector}>
+                <button
+                    onClick={() => i18n.changeLanguage('es')}
+                    aria-label="Cambiar idioma a español"
+                    className={styles.languageButton}
+                >
+                    ES
+                </button>
+                <button
+                    onClick={() => i18n.changeLanguage('en')}
+                    aria-label="Switch language to English"
+                    className={styles.languageButton}
+                >
+                    EN
+                </button>
             </div>
+
             <p>{t('reservedRights')}</p>
             <p>{t('contact')}</p>
 
-            {/* Indicador de versión */}
-            <p style={{ fontSize: '0.9em', color: '#555' }}>Versión 0.1.0</p>
+            <p className={styles.footerVersion}>Versión 0.1.0</p>
 
-            {/* Enlaces a redes */}
-            <div style={{ marginTop: '10px' }}>
-                <a href="https://github.com/J-COB8/DevRoads" target="_blank" rel="noopener noreferrer">GitHub</a> |{" "}
+            <div className={styles.footerLinks}>
+                <a href="https://github.com/J-COB8/DevRoads" target="_blank" rel="noopener noreferrer">GitHub</a>
+                {" | "}
                 <a href="https://linkedin.com/in/joaquin-alvarez-mercado" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
         </footer>

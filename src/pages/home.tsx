@@ -6,35 +6,6 @@ function Home() {
     const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
     const { t } = useTranslation('home');
 
-    const stagesData = [
-        {
-            title: t('stage1-title'),
-            subItems: [
-                t('stage1.1'),
-                t('stage1.2'),
-                t('stage1.3'),
-                t('stage1.4'),
-                t('stage1.5'),
-            ],
-        },
-        {
-            title: t('stage2-title'),
-            subItems: [],
-        },
-        {
-            title: t('stage3-title'),
-            subItems: [],
-        },
-        {
-            title: t('stage4-title'),
-            subItems: [],
-        },
-        {
-            title: t('stage5-title'),
-            subItems: [],
-        },
-    ];
-
     return (
         <main className={styles["main"]}>
             <section className={styles["max-content"]}>
@@ -75,31 +46,6 @@ function Home() {
                     <p>{t('development-text')}</p>
                 </section>
 
-                {/* Etapas del Proyecto */}
-                <section className={styles["section-block"]}>
-                    <h2 className={styles["stages-title"]}>{t('stages')}</h2>
-                    <div className={styles["stages-list"]}>
-                        {stagesData.map((stage, index) => (
-                            <div
-                                key={index}
-                                className={`${styles["stage-card"]} ${expandedIndex === index ? styles["expanded"] : ""}`}
-                                onClick={() => setExpandedIndex(index === expandedIndex ? null : index)}
-                            >
-                                <div className={styles["stage-header"]}>
-                                    <span>{stage.title}</span>
-                                    <span>{expandedIndex === index ? '−' : '+'}</span>
-                                </div>
-                                {expandedIndex === index && stage.subItems.length > 0 && (
-                                    <ul className={styles["subitems-list"]}>
-                                        {stage.subItems.map((item, subIdx) => (
-                                            <li key={subIdx}>{item}</li>
-                                        ))}
-                                    </ul>
-                                )}
-                            </div>
-                        ))}
-                    </div>
-                </section>
 
                 {/* Sobre mí */}
                 <section className={`${styles["section-block"]} ${styles["text-block"]}`}>

@@ -1,0 +1,53 @@
+/* Footer.module.css */
+
+.footerContainer {
+    padding: 20px;
+    background-color: #f1f1f1;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.languageSelector {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.languageButton {
+    background-color: #0077ff;
+    color: white;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.languageButton:hover {
+    background-color: #005fcc;
+}
+
+.footerVersion {
+    font-size: 0.85em;
+    color: #777;
+    margin-top: 8px;
+}
+
+.footerLinks {
+    margin-top: 10px;
+}
+
+.footerLinks a {
+    color: #0077ff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footerLinks a:hover {
+    text-decoration: underline;
+}
